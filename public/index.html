@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<!-- Link to Jquery -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<title>Banksy</title>
+</head>
+<body>
+	<!-- top logo heading -->
+	<header ></header>
+
+	<div class="container">
+		<!-- goal and progress area (call to action) -->
+		<div class="progressArea">
+			<!-- difference amount span does a get request to the database for the amount in account -->
+			<h1>$ <span class="saved"></span></h1>
+			<!-- create img element with jquery to hold goal img -->
+
+			<!-- area that will keep track of how much money saved to goal -->
+			<p class="progressBar"><span class="percentAmount">%</span></p>
+		</div>
+
+		<!-- Bank (action area) -->
+		<div class="bankArea">
+			<!-- heading for area -->
+			<h1></h1>
+			<br>
+
+			<!-- money add subtract area -->
+			<div class="moneyImgs">
+				<!-- money img buttons can go here with add subtract button -->
+			</div>
+				<!-- current balance area -->
+			<div class="currBalance">
+				<h2>$ <span class="saved"></span></h2>
+			</div>
+		</div>
+
+		<!-- search area/ goal finder-->
+		<div class="goal">
+			<!-- search bar/form  -->
+			<div class="search"> 
+				<form>
+					What toy do you want?
+					<input id="searchInput" type="text" name="toy"> <br>
+					<input type="submit" value="submit">
+				</form>
+			</div>
+
+				<!-- search result area -->
+			<div class="result">
+
+			</div>
+		</div>
+
+	</div>
+
+
+</body>
+</html>

@@ -4,6 +4,12 @@ var $exampleDescription = $('#example-description');
 var $submitBtn = $('#submit');
 var $exampleList = $('#example-list');
 
+// function to get the information from the goal search form
+$('submit').on('click', event =>{
+	event.preventDefault();
+	var goalSearch = $('#searchInput').val();
+})
+
 // The API object contains methods for each kind of request we'll make
 var API = {
 	saveExample: function (example) {
