@@ -5,15 +5,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<<<<<<< HEAD
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	 crossorigin="anonymous">
 
-=======
-	
-	<link rel="stylesheet" href="./styles/styles.css">
->>>>>>> master
 	<!-- Link to Jquery -->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<title>Banksy</title>
@@ -43,31 +38,31 @@
 							<div class="row">
 								<h1 class="display-4">Click on money</h1>
 								<div class="col-sm-6">
-									<img src="./images/one_dollar.jpg" alt="one dollar" width="200px">
+									<img class="money" data-value=1 src="./images/one_dollar.jpg" alt="one dollar" width="200px">
 								</div>
 								<div class="col-sm-6">
-									<img src="./images/five_dollar.jpg" alt="five dollar" width="200px">
+									<img class="money" data-value=5 src="./images/five_dollar.jpg" alt="five dollar" width="200px">
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-sm-6">
-									<img src="./images/ten_dollar.jpg" alt="ten dollar" width="200px">
+									<img class="money" data-value=10 src="./images/ten_dollar.jpg" alt="ten dollar" width="200px">
 								</div>
 								<div class="col-sm-6">
-									<img src="./images/twenty_dollar.jpg" alt="twenty dollar" width="200px">
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-12">
-									<img src="./images/hunderd_dollar.jpg" alt="hundred dollar" width="200px">
+									<img class="money" data-value=20 src="./images/twenty_dollar.jpg" alt="twenty dollar" width="200px">
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-sm-12">
-									<img src="./images/penny.jpg" alt="penny" width="100px">
-									<img src="./images/nickel.jpg" alt="nickel" width="100px">
-									<img src="./images/dime.jpg" alt="dime" width="100px">
-									<img src="./images/quarter.jpg" alt="quarter" width="100px">
+									<img class="money" data-value=100 src="./images/hunderd_dollar.jpg" alt="hundred dollar" width="200px">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12">
+									<img class="money" data-value=0.01 src="./images/penny.jpg" alt="penny" width="100px">
+									<img class="money" data-value=0.05 src="./images/nickel.jpg" alt="nickel" width="100px">
+									<img class="money" data-value=0.1 src="./images/dime.jpg" alt="dime" width="100px">
+									<img class="money" data-value=0.25 src="./images/quarter.jpg" alt="quarter" width="100px">
 								</div>
 							</div>
 
@@ -79,28 +74,39 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-sm-12">
-									amout here
+								<div class="col-sm-6">
+									<div class="dollar_sign">
+										<img src="./images/dollar_sign.jpg" alt="dollar sign" width="200px">
+									</div>
+								</div>
+								<div class="col-sm-6">
+									User Balance
+									<div class="user_balance">
+										0
+									</div>
+									User Savings
+									<div class="user_savings">
+										0
+									</div>
 								</div>
 							</div>
-							<a class="btn btn-primary btn-lg" href="#" role="button">Clear</a>
+							<a class="clear btn btn-primary btn-lg" href="#" role="button">CLEAR TOTAL</a>
+							<a class="save btn btn-primary btn-lg" href="#" role="button">SAVE</a>
+							<a class="buy btn btn-primary btn-lg" href="#" role="button">BUY</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
-
 		<!-- search area/ goal finder-->
 		<div class="goal">
 			<!-- search bar/form  -->
 			<div class="search">
 				<form>
-					<label class="searchLabel">What toy do you want?</label> 
-						<span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: search" ></span>
-						<input  id="searchInput" type="text" name="toy"> <br>
-					<br> <br>
-					<input class="submit" type="submit" value="Submit">
+					What toy do you want?
+					<input id="searchInput" type="text" name="toy"> <br>
+					<input type="submit" value="submit">
 				</form>
 			</div>
 
@@ -111,7 +117,48 @@
 		</div>
 
 	</div>
+	<script>
+		var total = 0;
+		var saveTotal = 0;
 
+		$(document).on("click", ".money", function (event) {
+			var money = $(this).attr("data-value");
+			console.log(money);
+			(total += parseFloat(money)).toFixed(2);
+			console.log(total);
+
+			$(".user_balance").html(total.toFixed(2));
+		})
+
+		$(document).on("click", ".clear", function (event) {
+			total = 0
+			$(".user_balance").html(total);
+		})
+
+		$(document).on("click", ".save", function (event) {
+			if (total === 0) {
+				alert("You don't have any money to save.  Bummer!")
+				return;
+			}
+			else {
+				save = prompt("how much would you like to save?");
+				if (save > total) {
+					alert("you can't save more money than you have in your account.  Nice try!")
+					return;
+				}
+				else {
+					total -= save;
+					(saveTotal += parseFloat(save)).toFixed(2);
+					console.log("total ", total);
+					console.log("saveTotal ", saveTotal);
+					$(".user_balance").html(total);
+					$(".user_savings").html(saveTotal);
+				}
+			}
+		})
+
+
+	</script>
 
 </body>
 
