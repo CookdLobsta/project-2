@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../public/js/splash.js"></script>
 </head>
 
 <body>
@@ -25,51 +26,47 @@
 					<span class="card-title">Money Manager</span>
 				</div>
 				<div class="card-content">
-					<p>Welcome to the Childrens Money Manager! You will first enter the amount of money you have. Then you will pick something
-						you would like to buy. Based on how much you have, and how much your item costs, we will give you the calcutations
-						on how long it will take to purchase the item based on your chores.</p>
-				</div>
-				<div class="card-action">
-					<a href="#" type="button" id="myBtn">Click to start saving money!</a>
+					<!-- <p>Welcome to the Childrens Money Manager! You will first enter the amount of money you have. Then you will pick something
+						you would like to buy. Based on how much youd have, and how much your item costs, we will give you the calcutations
+						on how long it will take to purchase the item based on your chores.</p> -->
+					<form role="form">
+						<div class="form-group">
+							<h3>Enter your name to begin the fun! </h3> 
+							<input type="text" class="form-control" id="username" placeholder="Your name">
+							<button href="/name" id="submit" type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Submit</button>
+						</div>
+					</form>
+					
 				</div>
 			</div>
 		</div>
 
 
-		<div class="container">
-			<!-- Modal -->
+		<!-- <div class="container">
 			<div class="modal fade" id="myModal" role="dialog">
 				<div class="modal-dialog">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-
-					<!-- Modal content-->
 					<div class="modal-content">
-						<div class="modal-header" style="padding:35px 50px;">
+						<div class="modal-header">
 							<h4><span></span> Enter Your Name!</h4>
 						</div>
-						<div class="modal-body" style="padding:40px 50px;">
+						<div class="modal-body">
 							<form role="form">
 								<div class="form-group">
 									<input type="text" class="form-control" id="usrname" placeholder="Enter your name">
 								</div>
 
-								<button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Submit</button>
+								<button id="submit" type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Submit</button>
 							</form>
 						</div>
 						<div class="modal-footer">
 							<button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>
 								Cancel</button>
-
 						</div>
 					</div>
-
 				</div>
 			</div>
-		</div>
-
-
-
-
+		</div> -->
 
 
 </body>
@@ -90,31 +87,15 @@
 	.card {
 		margin: 0 auto;
 		box-shadow: 5px 5px 10px black;
-		height: 60%;
-		width: 80%;
+		height: 55%;
+		width: 70%;
 	}
 
-	.modal-header,
-	h4,
-	.close {
+	.modal-header, h4, .close {
 		background-color: #5cb85c;
 		color: white !important;
 		text-align: center;
 		font-size: 30px;
 	}
-
-	.modal-footer {
-		background-color: #f9f9f9;
-	}
 </style>
-
-<script>
-
-	$(document).ready(function () {
-		$("#myBtn").click(function () {
-			$("#myModal").modal();
-		});
-	});
-</script>
-
 </html>
