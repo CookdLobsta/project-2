@@ -1,7 +1,5 @@
 
-
-
-
+			 
 $(document).ready(function () {
 	// $("#myBtn").click(function () {
 	// 	$("#myModal").modal();
@@ -11,5 +9,11 @@ $(document).ready(function () {
 		event.preventDefault();
 		var name = $("#username").val().trim();
 		console.log(name);
+		
+		$.post("/api/name", {user_name: name}, function(res){
+			console.log(res);
+		})
 	})
 });
+
+modules.export = nameData;
