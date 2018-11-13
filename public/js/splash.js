@@ -1,10 +1,7 @@
-
-
-
-
 $(document).ready(function () {
 	// $("#myBtn").click(function () {
-	// 	$("#myModal").modal();
+		$("#myModal").modal();
+		
 	// });
 
 	$("#submit").on("click", function(event) {
