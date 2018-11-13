@@ -5,32 +5,7 @@ var $submitBtn = $('#submit');
 var $exampleList = $('#example-list');
 
 // function to get the information from the goal search form
-$('submit').on('click', event =>{
-	event.preventDefault();
-	var goalSearch = $('#searchInput').val();
 
-	
-	function walmartDisplay() {
-		
-		var queryURL = "http://api.walmartlabs.com/v1/search?apiKey={yjrkwv9phtddy72qkfxg4v33}&lsPublisherId={romanghans}&query=" + goalSearch + "&categoryId=3944&sort=price&order=asc";
-		//linking our search bar "searchInput" into our queryURL 
-		
-		$.ajax({
-			url: queryURL,
-			method: "GET"
-		}).then(function (response) {
-			
-			var walmartDiv = $("<div class='walmartDiv'");
-			
-			var walmartPrice = response.salesPrice;
-			
-			var walmartPriceText = $("<p>").text(walmartPrice);
-			
-			walmartDiv.append(walmartPriceText);
-		});
-	};
-	walmartDisplay();
-});
 	
 	// The API object contains methods for each kind of request we'll make
 	var API = {
