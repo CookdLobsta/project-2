@@ -2,10 +2,15 @@ var db = require('../models');
 
 
 module.exports = function (app) {
-	app.get("/", function(req, res) {
-		console.log("hit");
+	app.get("/", function (req, res) {
 		res.render('splash');
-	  });
+	});
+
+	app.get("/money_manager", function (req, res) {
+		console.log("in money manager: ");
+
+		res.render('money_manager');
+	});
 	// Load index page
 	// app.get('/', function (req, res) {
 	// 	db.Example.findAll({}).then(function (dbExamples) {
@@ -26,7 +31,7 @@ module.exports = function (app) {
 	});
 
 	// Render 404 page for any unmatched routes
-	app.get('*', function (req, res) {
+	// app.get('*', function (req, res) {
 		// res.render('404');
-	});
+	// });
 };
