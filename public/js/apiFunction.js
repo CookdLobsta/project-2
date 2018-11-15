@@ -2,8 +2,7 @@ $(document).on("click","#submitToy", function(event){
 	var count;
 		event.preventDefault();
 		console.log("test");
-
-		$("#walmartDiv").empty()
+ 		$("#walmartDiv").empty()
 		search = $(".searchInput").val()
 		count = 1
 		walmartCall(search, count)
@@ -29,27 +28,23 @@ $(document).on("click","#submitToy", function(event){
 					style: "width: 100%, margin: 0; margin-top: 0; margin-bottom: 0;"
 				});
 			}; // end for loop
-
-				var image = $("<img>")
+ 				var image = $("<img>")
 				image.attr({
 					src: response.items[i].mediumImage,
 					class: "card-img-top"
 				});
 					var cardBody = $("<div>")
 					cardBody.attr("class", "card-body")
-
-					var name = $("<h5>")
+ 					var name = $("<h5>")
 					name.attr("class", "card-title")
 					name.append(response.items[i].name)
 					cardBody.append(name)
-
-					msrp = "$" + response.items[i].msrp
+ 					msrp = "$" + response.items[i].msrp
 					walmartPrice = response.items[i].salePrice;
 					walmartApiReturned = true;
 					if (msrp === "$undefined")
 						msrp = ""
-
-					var name = $("<h5>")
+ 					var name = $("<h5>")
 					name.attr("class", "card-title")
 					name.append("$" + response.items[i].salePrice + " <s>" + msrp + "</s>")
 					cardBody.append(name)
@@ -63,40 +58,6 @@ $(document).on("click","#submitToy", function(event){
 					
 					$("#walmartDiv").append(card)
 					
-		}); // end .then function
-
-
-
-
-
-
-
-
-
-
-	// $('submit').on('click', event =>{
-	// 	event.preventDefault();
-	// 	var goalSearch = $('#searchInput').val();
-	
-		
-	// 	function walmartDisplay() {
-			
-	// 		var queryURL = "http://api.walmartlabs.com/v1/search?apiKey={yjrkwv9phtddy72qkfxg4v33}&lsPublisherId={romanghans}&query=" + goalSearch + "&categoryId=3944&sort=price&order=asc";
-	// 		//linking our search bar "searchInput" into our queryURL 
-			
-	// 		$.ajax({
-	// 			url: queryURL,
-	// 			method: "GET"
-	// 		}).then(function (response) {
-				
-	// 			var walmartDiv = $("<div class='walmartDiv'");
-				
-	// 			var walmartPrice = response.salesPrice;
-				
-	// 			var walmartPriceText = $("<p>").text(walmartPrice);
-				
-	// 			walmartDiv.append(walmartPriceText);
-	// 		});
-	// 	};
-	// 	walmartDisplay();
-	// });
+		})
+	};
+		// end .then function
