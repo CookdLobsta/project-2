@@ -9,6 +9,13 @@ module.exports = function (app) {
 		});
 	});
 
+	// Temp
+	app.post('/money_manager_post', (req, res) => {
+		res.send('/money_manager');
+	})
+
+	// End Temp
+
 	// Create a new example
 	app.post('/api/name', function (req, res) {
 		console.log(req.body);
