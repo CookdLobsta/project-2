@@ -2,7 +2,11 @@
 	width:100%;
 }
 body {
-	background-color: lightgray;
+	background-color: yellow;
+}
+
+.wrapper {
+	background-color: lightgrey;
 }
 .splashCard {
 	margin: 0 auto;
