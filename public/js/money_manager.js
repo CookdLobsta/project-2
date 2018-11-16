@@ -8,7 +8,7 @@ var total = 0;
 			(total += parseFloat(money)).toFixed(2);
 			console.log(total);
 
-			$(".user_balance").html(total.toFixed(2));
+			$(".newTotal").html(total.toFixed(2));
 		})
 
 		$(document).on("click", ".clear", function (event) {
