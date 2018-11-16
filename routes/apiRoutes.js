@@ -16,6 +16,13 @@ module.exports = function (app) {
 		})
 		res.send('/money_manager');
 })
+// add user_balance
+app.post('/money_manager_money', (req, res) => {
+	db.Table.create(req.body).then(function(dbTable) {
+		res.json(dbTable);
+	})
+	res.send('/money_manager');
+})
 
 app.put('/money_manager_post', function(req, res) {
     db.Table.update(

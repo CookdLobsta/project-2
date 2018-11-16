@@ -1,29 +1,25 @@
 var total = 0;
 var saveTotal = 0;
 
-<<<<<<< HEAD
-// $(document).on("click", ".money", function (event) {
-	alert("hit");
+$(document).on("click", ".money", function (event) {
 	var money = $(this).attr("data-value");
 	// console.log(money);
 	(total += parseFloat(money)).toFixed(2);
 	// console.log(total);
 
 	$(".user_balance").html(total.toFixed(2));
-=======
-		$(document).on("click", ".money", function (event) {
-			// alert("hit");
-			var money = $(this).attr("data-value");
-			console.log(money);
-			(total += parseFloat(money)).toFixed(2);
-			console.log(total);
+	$(document).on("click", ".money", function (event) {
+		// alert("hit");
+		var money = $(this).attr("data-value");
+		console.log(money);
+		(total += parseFloat(money)).toFixed(2);
+		console.log(total);
 
-			$(".newTotal").html(total.toFixed(2));
+		$(".newTotal").html(total.toFixed(2));
 
-			var audio = new Audio('../images/chaching.mp3');
-			audio.play();
-		})
->>>>>>> master
+		var audio = new Audio('../images/chaching.mp3');
+		audio.play();
+	})
 
 	var userName = {
 		user_balance: total
@@ -78,4 +74,25 @@ $(document).on("click", ".save", function (event) {
 			$(".user_savings").html(saveTotal).toFixed(2);
 		}
 	}
+})
+
+// post user_balance to database
+$(document).on("click", ".submitTotal", function (event) {
+	var userTotal = parseFloat($(".newTotal").text());
+	// console.log("total "+ userTotal);
+	// console.log(typeof(userTotal));
+	var userMoney = {
+		user_balance: userTotal
+	}
+
+	$.ajax("/money_manager_money", {
+		type: "POST",
+		contentType: 'application/json',
+		data: JSON.stringify(userMoney)
+	}).then(
+		function (res) {
+			console.log("added money", res);
+			window.location = res;
+		}
+	);
 })
