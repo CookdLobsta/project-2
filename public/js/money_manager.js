@@ -1,6 +1,7 @@
 var total = 0;
 var saveTotal = 0;
 
+<<<<<<< HEAD
 // $(document).on("click", ".money", function (event) {
 	alert("hit");
 	var money = $(this).attr("data-value");
@@ -9,6 +10,20 @@ var saveTotal = 0;
 	// console.log(total);
 
 	$(".user_balance").html(total.toFixed(2));
+=======
+		$(document).on("click", ".money", function (event) {
+			// alert("hit");
+			var money = $(this).attr("data-value");
+			console.log(money);
+			(total += parseFloat(money)).toFixed(2);
+			console.log(total);
+
+			$(".newTotal").html(total.toFixed(2));
+
+			var audio = new Audio('../images/chaching.mp3');
+			audio.play();
+		})
+>>>>>>> master
 
 	var userName = {
 		user_balance: total

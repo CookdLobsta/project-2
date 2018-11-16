@@ -1,25 +1,33 @@
-<div class="container">
-		<!-- goal and progress area (call to action) -->
-		<div class="progressArea">
-			
-			<!-- difference amount span does a get request to the database for the amount in account -->
-			<h1>$ <span class="saved"></span></h1>
-			
-			<!-- create img element with jquery to hold goal img -->
-			<!-- where jquery will put the img of the goal the user has chosen -->
-			<div class="goalImg">
+<div class="wrapper">
 
+	<div class="jumbotron jumbotron-fluid jumbo">
+		<img class="logoImg" src="/images/logo.png" alt="banksy. Your Personal Piggy Bank">
+	</div>
+	<div class="container">
+
+		<div class="loadingBar">
+			<img class="rounded img-fluid" src="/images/lego placeholder.jpeg" alt="lego">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="progress bg-danger progress-bar-striped progress-bar-animated">
+						<div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 25%">
+							<span>
+								$
+								<span class="newTotal">0</span>
+							</span>
+						</div>
+					</div>
+				</div>
 			</div>
-
-			<!-- area that will keep track of how much money saved to goal -->
-			<p class="progressBar"><span class="percentAmount">%</span></p>
 		</div>
-
+		<br>
 		<!-- Bank (action area) -->
-		<div class="bankArea">
-			<div class="jumbotron">
-				<div class="container">
+		<!-- <div class="jumbotron"> -->
+		<div class="row">
+			<div class="col-lg-3">
+				<div class="moneyBox">
 					<div class="row">
+<<<<<<< HEAD
 						<div class="col-sm-6">
 							<div class="row">
 								<h1 class="display-4">Click on money</h1>
@@ -49,57 +57,89 @@
 									<img class="money" data-value=0.05 src="./images/nickel.jpg" alt="nickel" width="100px">
 									<img class="money" data-value=0.1 src="./images/dime.jpg" alt="dime" width="100px">
 									<img class="money" data-value=0.25 src="./images/quarter.jpg" alt="quarter" width="100px">
-								</div>
-							</div>
+=======
+						<div class="col-lg-12">
+							<div class="card blue-grey darken-1 ">
 
-						</div>
-						<div class="col-sm-6">
-							<div class="row">
-								<div class="col-sm-12">
-									<h1 class="display-4">USER BALANCE</h1>
+								<div class="card-content white-text">
+									<h2>Add Money</h2>
+									<img class="money" data-value=1 src="/images/oneDollar.png" alt="one dollar" width="200px">
+									<img class="money" data-value=5 src="/images/fiveDollar.png" alt="five dollar" width="200px">
+									<img class="money" data-value=10 src="/images/tenDollar.png" alt="ten dollar" width="200px">
+									<img class="money" data-value=20 src="/images/twentyDollar.png" alt="twenty dollar" width="200px">
+>>>>>>> master
 								</div>
+
+								<div class="card-action">
+									<img class="money coin" data-value=0.01 src="/images/penney.png" alt="penny" width="100px">
+									<img class="money coin" data-value=0.05 src="/images/nickle.png" alt="nickel" width="100px">
+									<img class="money coin" data-value=0.1 src="/images/dime.png" alt="dime" width="100px">
+									<img class="money coin" data-value=0.25 src="/images/quarter.png" alt="quarter" width="100px">
+								</div>
+
 							</div>
-							<div class="row">
-								<div class="col-sm-6">
-									<div class="dollar_sign">
-										<img src="./images/dollar_sign.jpg" alt="dollar sign" width="200px">
-									</div>
-								</div>
-								<div class="col-sm-6">
-									User Balance
-									<div class="user_balance">
-										0
-									</div>
-									User Savings
-									<div class="user_savings">
-										0
-									</div>
-								</div>
-							</div>
-							<a class="clear btn btn-primary btn-lg" role="button">CLEAR TOTAL</a>
-							<a class="save btn btn-primary btn-lg" role="button">SAVE</a>
-							<a class="buy btn btn-primary btn-lg" role="button">BUY</a>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 
-		<!-- search area/ goal finder-->
-		<div class="goal">
-			<!-- search bar/form  -->
-			<div class="search">
-				<form>
-					What toy do you want?
-					<input id="searchInput" type="text" name="toy"> <br>
-					<input type="submit" value="submit">
-				</form>
+			<div class="col-lg-9">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="displayBox">
+							<div class="card blue-grey darken-1">
+								<div class="card-content white-text">
+
+									<h2>Welcome Guest Name</h2>
+									<div class="balances">
+										<h4>Your Balance</h4>
+										<h1 class="user_balance">$<span class="newTotal">0</span></h1>
+										<button type="button" class="submitTotal waves-effect waves-light btn">Submit Total</button>
+									</div>
+
+									<div class="searchBox">
+										<div class="row">
+											<div class="col-lg-12">
+												<div class="card-action">
+													<span class="card-title">What would you like to save for?</span>
+													<input id="searchInput" type="text" name="toy"> <br>
+													<input id="submitToy" class="waves-effect waves-light btn" type="submit" value="search">
+
+
+													{{!-- gboo --}}
+
+
+													<br> <br>
+													<div class="result">
+														<img src="/images/lego placeholder.jpeg" alt="">
+													</div>
+													<br>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+<<<<<<< HEAD
+							<a class="clear btn btn-primary btn-lg" role="button">CLEAR TOTAL</a>
+							<a class="save btn btn-primary btn-lg" role="button">SAVE</a>
+							<a class="buy btn btn-primary btn-lg" role="button">BUY</a>
+=======
+>>>>>>> master
+						</div>
+					</div>
+				</div>
 			</div>
 
-			<!-- search result area -->
-			<div class="result">
-
-			</div>
 		</div>
-
 	</div>
+
+	<!-- search area/ goal finder-->
+	<!-- search bar/form  -->
+	<br>
+	<footer class="page-footer">
+		© 2018 Copyright Banksy
+	</footer>
+
+</div>
