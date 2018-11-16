@@ -37,9 +37,9 @@ header {
     text-align: center;
 }
 .page-footer {
-  padding: 10px;
-  text-align: center;
-  height: 50px;
+  padding: 20px;
+	text-align: center;
+	background-color: #556e79;
 }
 .yourBalance {
   border: 2px solid black;
@@ -56,4 +56,13 @@ header {
     font-style: bold;
     font-size: 125px;
     background-color: rgb(0,0,0,0.3);
+}
+
+.logoImg{
+	width: 800px;
+}
+
+.jumbo{
+	padding-top:20px;
+	padding-bottom: 10px; 
 }
