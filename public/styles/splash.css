@@ -1,29 +1,18 @@
-img {
-    width:100%;
+.spalshImg {
+	width:100%;
 }
-
 body {
-    background-color: lightgray;
+	background-color: lightgray;
 }
-
-.footer-copyright {
-    text-align: center;
+.splashCard {
+	margin: 0 auto;
+	box-shadow: 5px 5px 10px black;
+	height: 55%;
+	width: 70%;
 }
-
-.page-footer {
-    background-color: orange;
-}
-
-.card {
-    margin: 0 auto;
-    box-shadow: 5px 5px 10px black;
-    height: 55%;
-    width: 70%;
-}
-
 .modal-header, h4, .close {
-    background-color: #5cb85c;
-    color: white !important;
-    text-align: center;
-    font-size: 30px;
+	background-color: #5cb85c;
+	color: white !important;
+	text-align: center;
+	font-size: 30px;
 }

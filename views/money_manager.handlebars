@@ -30,13 +30,13 @@
 	<!-- <div class="jumbotron"> -->
 	<div class="row">
 
-		<div class="col-lg-4">
+		<div class="col-lg-3">
 			<div class="moneyBox">
 				<div class="row">
 					<div class="col-lg-12">
-						<div class="card blue-grey darken-1">
+						<div class="card blue-grey darken-1 ">
 							<div class="card-content white-text">
-								<span class="card-title">Click on Money</span>
+								<h2>Click to add Money</h2>
 								<img class="money" data-value=1 src="/images/oneDollar.png" alt="one dollar" width="200px">
 
 								<img class="money" data-value=5 src="/images/fiveDollar.png" alt="five dollar" width="200px">
@@ -58,38 +58,43 @@
 			</div>
 		</div>
 
-		<div class="col-lg-8">
+		<div class="col-lg-9">
 			<div class="displayBox">
 				<div class="row">
-					<div class="col s12 m6">
+					<div class="col-lg-12">
 						<div class="card blue-grey darken-1">
 							<div class="card-content white-text">
+
 								<div class="row">
 									<div class="col-lg-12">
-										<h1>Your Account</h1>
-										<div class="row">
-											<div class="col-lg-4">
-												<img src="images/dollarSign.png" alt="dollar sign" width="200px">
-											</div>
-											<div class="col-lg-8">
-												<div class="balances">
-													<h4>Your Balance</h4>
-													<p class="user_balance">0</p>
-													<button type="button" class="submitTotal waves-effect waves-light btn">Submit Total</button>
+										<h2>Your Account</h2>
+
+										<div class="balances">
+											<h4>Your Balance</h4>
+											<h1 class="user_balance">$<span class="newTotal">0</span></h1>
+											<button type="button" class="submitTotal waves-effect waves-light btn">Submit Total</button>
+										</div>
+
+										<div class="searchBox">
+											<div class="row">
+												<div class="card-action">
+
+													<div class="col-lg-12">
+														<span class="card-title">What would you like to save for?</span>
+														<input id="searchInput" type="text" name="toy"> <br>
+														<input id="submitToy" class="waves-effect waves-light btn" type="submit" value="search">
+														<div class="result">
+														</div>
+													</div>
 												</div>
+
 											</div>
 										</div>
-									</div>
-									<div class="divider"> </div>
-									<form>
-										What toy do you want?
-										<input id="searchInput" type="text" name="toy"> <br>
-										<input id="submitToy" type="submit" value="submit">
-									</form>
-									<!-- search result area -->
-									<div class="result">
+
 									</div>
 								</div>
+
+
 							</div>
 						</div>
 					</div>
@@ -97,6 +102,12 @@
 			</div>
 		</div>
 	</div>
+
+
+</div>
+</div>
+
+</div>
 </div>
 
 <!-- search area/ goal finder-->
@@ -105,7 +116,5 @@
 <br>
 
 <footer class="page-footer">
-	<div class="container">
-		© 2018 Copyright Banksy
-	</div>
+	© 2018 Copyright Banksy
 </footer>
