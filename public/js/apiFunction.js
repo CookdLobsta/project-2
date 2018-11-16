@@ -23,7 +23,7 @@ $(document).on("click","#submitToy", function(event){
 					"sale price":itemInfo.items.salePrice,
 					"name":itemInfo.items.name
 				}
-				console.log(output);
+				
 			} else {
 				console.log("You broke it!: " + error);
 				return;
