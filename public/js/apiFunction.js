@@ -27,14 +27,14 @@ $(document).on("click","#submitToy", function(event){
 							walmartDiv.append(walImage);
 							//display at top of page also
 							var topDiv = $(".loadingBar");
-							topDiv.append(topImage);
+							topDiv.prepend(topImage);
 							
 							//response item name
 							var goalName = itemInfo.name;
 							//put that name in element
 							var walName = $(".resultName").text(goalName);
 							//display on page
-							walmartDiv.append(walName);
+							walmartDiv.prepend(walName);
 							
 							//response item price
 							var goalPrice = itemInfo.salePrice;
