@@ -27,7 +27,7 @@ $(document).on("click","#submitToy", function(event){
 							walmartDiv.append(walImage);
 							//display at top of page also
 							var topDiv = $(".loadingBar");
-							topDiv.append(topImage);
+							topDiv.prepend(topImage);
 							
 							//response item name
 							var goalName = itemInfo.name;
