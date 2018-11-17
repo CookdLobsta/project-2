@@ -1,104 +1,50 @@
-$(document).on("click",".submitToy", function(event){
-	event.preventDefaunt();
-	console.log("test");
+$(document).on("click","#submitToy", function(event){
+	event.preventDefault();
+	console.log("Retrieving Data...");
+
+	function walmartItem(search) {
+			var search = $("#searchInput").val().trim();
+			var walmartRequest = "http://api.walmartlabs.com/v1/search?query="+search+"&format=json&apiKey=g5eyb7eyu32n6atjb8k9eq9x";
+
+			$.ajax({
+					url: walmartRequest,
+					method: 'GET'
+			})
+			.then(function (response) {
+				console.log(response);
+							//response location on page
+							var walmartDiv = $(".result");
+							//readable format
+							var itemInfo = response.items[0];
+							
+							//response item image
+							var goalImage = itemInfo.mediumImage;
+							//put that image in element
+							var walImage = $(".resultImage").attr('src', goalImage);
+							//display on page
+							walmartDiv.append(walImage);
+							
+							//response item name
+							var goalName = itemInfo.name;
+							//put that name in element
+							var walName = $(".resultName").text(goalName);
+							//display on page
+							walmartDiv.append(walName);
+							
+							//response item price
+							var goalPrice = itemInfo.salePrice;
+							//put that price in element
+							var walPrice = $(".resultPrice").text("$ "+ goalPrice);
+							//display on page
+							walmartDiv.append(walPrice);
+							
+							//response item upc
+							var goalUpc = itemInfo.upc;
+							//no need to display UPC, console.log it
+							console.log(goalUpc);
+					});
+
+			};
+			walmartItem();
+	//end on.click
 });
-
-
-
-
-// var count;
-
-	// $(document).on("click",".submitToy", function () {
-	// 	event.preventDefault();
-	// 	console.log("test");
-	// 	$("#walmartItemInfo").empty()
-	// 	search = $(".searchInput").val()
-	// 	count = 1
-	// 	walmartCall(search, count)
-	// })
-
-	// function walmartCall() {
-	// 	$.ajax({
-	// 		url: `http://api.walmartlabs.com/v1/search?`,
-	// 		method: "GET",
-	// 		data: {
-	// 			"query": search
-	// 			, "format": "json"
-	// 			, "apiKey": "p3dsfmf2vhm67rj2ed4xhhaa"
-	// 			, "start": count
-	// 			, "numItems": 1
-	// 		}
-	// 	}).then(function (response) {
-	// 		console.log(response);
-
-	// 		for (i = 0; i < response.items.length; i++) {
-	// 			var card = $("<div>")
-	// 			card.attr({
-	// 				class: "card d-inline-block m-2",
-	// 				style: "width: 100%, margin: 0; margin-top: 0; margin-bottom: 0;"
-	// 			})
-
-	// 			var image = $("<img>")
-	// 			image.attr({
-	// 				src: response.items[i].mediumImage,
-	// 				class: "card-img-top"
-	// 			})
-
-	// 			var cardBody = $("<div>")
-	// 			cardBody.attr("class", "card-body")
-
-	// 			var name = $("<h5>")
-	// 			name.attr("class", "card-title")
-	// 			name.append(response.items[i].name)
-	// 			cardBody.append(name)
-
-	// 			msrp = "$" + response.items[i].msrp
-	// 			walmartPrice = response.items[i].salePrice;
-	// 			walmartApiReturned = true;
-
-	// 			if (msrp === "$undefined")
-	// 			msrp = ""
-
-	// 			var name = $("<h5>")
-	// 			name.attr("class", "card-title")
-	// 			name.append("$" + response.items[i].salePrice + " <s>" + msrp + "</s>")
-	// 			cardBody.append(name)
-
-	// 			var name = $("<h5>")
-	// 			name.attr("class", "card-title")
-	// 			name.append("UPC: " + response.items[i].upc)
-	// 			cardBody.append(name)
-	// 			card.append(image)
-	// 			card.append(cardBody)
-
-	// 			$("#walmartItemInfo").append(card)
-	// 		}
-	// 	})
-	// };
-
-	// $('submit').on('click', event =>{
-	// 	event.preventDefault();
-	// 	var goalSearch = $('#searchInput').val();
-	
-		
-	// 	function walmartDisplay() {
-			
-	// 		var queryURL = "http://api.walmartlabs.com/v1/search?apiKey={yjrkwv9phtddy72qkfxg4v33}&lsPublisherId={romanghans}&query=" + goalSearch + "&categoryId=3944&sort=price&order=asc";
-	// 		//linking our search bar "searchInput" into our queryURL 
-			
-	// 		$.ajax({
-	// 			url: queryURL,
-	// 			method: "GET"
-	// 		}).then(function (response) {
-				
-	// 			var walmartDiv = $("<div class='walmartDiv'");
-				
-	// 			var walmartPrice = response.salesPrice;
-				
-	// 			var walmartPriceText = $("<p>").text(walmartPrice);
-				
-	// 			walmartDiv.append(walmartPriceText);
-	// 		});
-	// 	};
-	// 	walmartDisplay();
-	// });
