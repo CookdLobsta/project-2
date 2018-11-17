@@ -21,8 +21,13 @@ $(document).on("click","#submitToy", function(event){
 							var goalImage = itemInfo.mediumImage;
 							//put that image in element
 							var walImage = $(".resultImage").attr('src', goalImage);
+							//put same image in different element
+							var topImage = $(".topImage").attr('src', goalImage);
 							//display on page
 							walmartDiv.append(walImage);
+							//display at top of page also
+							var topDiv = $(".loadingBar");
+							topDiv.append(topImage);
 							
 							//response item name
 							var goalName = itemInfo.name;
