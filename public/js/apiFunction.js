@@ -34,7 +34,7 @@ $(document).on("click","#submitToy", function(event){
 							//put that name in element
 							var walName = $(".resultName").text(goalName);
 							//display on page
-							walmartDiv.append(walName);
+							walmartDiv.prepend(walName);
 							
 							//response item price
 							var goalPrice = itemInfo.salePrice;

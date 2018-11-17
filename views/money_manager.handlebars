@@ -4,9 +4,9 @@
 		<img class="logoImg" src="/images/logo.png" alt="banksy. Your Personal Piggy Bank">
 	</div>
 	<div class="container">
+		<img class="topImage">
 
 		<div class="loadingBar">
-			<img class="topImage rounded img-fluid">
 			<div class="row">
 				<div class="col-md-12">
 					<div class="progress bg-danger progress-bar-striped progress-bar-animated">
@@ -71,18 +71,15 @@
 											<div class="col-lg-12">
 												<div class="card-action">
 													<span class="card-title">What would you like to save for?</span>
+
 													<input id="searchInput" type="text" name="toy"> <br>
 													<input id="submitToy" class="waves-effect waves-light btn" type="submit" value="search">
-
-
-													{{!-- gboo --}}
-
-
+													
 													<br> <br>
 													<div class="result">
+														<h1 class="resultPrice"></h1>
+														<h5 class="resultName"></h5>
 														<img class="resultImage">
-														<h3 class="resultName"></h3>
-														<p class="resultPrice"></p>
 													</div>
 
 													<br>
