@@ -5,6 +5,19 @@ var total;
 
 
 module.exports = function (app) {
+
+	app.get("/api/get_balance/:id", function(req, res) {
+		// findAll returns all entries for a table when used with no options
+		db.Table.findOne({
+		  where: {
+			id: req.params.id
+		  }
+		}).then(function(user) {
+		  // We have access to the todos as an argument inside of the callback function
+		  console.log(user.dataValues);
+		  res.json(user.dataValues);
+		});
+	  });
 	// Get all examples
 	// app.get('/api/examples', function (req, res) {
 	// 	db.Example.findAll({}).then(function (dbExamples) {

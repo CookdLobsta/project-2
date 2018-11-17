@@ -1,10 +1,10 @@
 module.exports = function (sequelize, DataTypes) {
 	var Table = sequelize.define('Table', {
 		user_name: DataTypes.STRING,
-		user_balance: DataTypes.INTEGER,
+		user_balance: DataTypes.DECIMAL(10,2),
 		goal_name: DataTypes.STRING,
 		goal_upd: DataTypes.INTEGER,
-		goal_price: DataTypes.INTEGER,
+		goal_price: DataTypes.DECIMAL(10,2),
 		createdAt: {
 			allowNull: false,
 			type: DataTypes.DATE,
