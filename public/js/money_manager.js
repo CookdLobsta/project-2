@@ -1,8 +1,13 @@
-// var NameData = require("../js/splash");
 
 var total = 0;
 var saveTotal = 0;
 var userID = 0;
+
+var urlLocation = window.location;
+console.log(JSON.stringify(urlLocation.search).split("=")[1]);
+var urlNum = parseInt(JSON.stringify(urlLocation.search).split("=")[1]);
+console.log(urlNum);
+console.log("url", urlLocation);
 
 //onload get user balance, put on page
 $(document).on("click", ".money", function(event) {
@@ -18,7 +23,7 @@ $(document).on("click", ".money", function(event) {
   audio.play();
 
   var userName = {
-    user_balance: total
+		user_balance: total
   };
 
   $.ajax("/money_manager_post", {
@@ -47,6 +52,7 @@ $(document).on("click", ".money", function(event) {
 // post user_balance to database
 
 $(document).on("click", ".submitTotal", function (event) {
+	event.preventDefault();
 	var userTotal = parseFloat($(".newTotal").text());
 	// console.log("total "+ userTotal);
 	// console.log(typeof(userTotal));
@@ -67,6 +73,7 @@ $(document).on("click", ".submitTotal", function (event) {
 
 	var userMoney = {
 		user_balance: userTotal,
+		idNumber: urlNum
 	}
 
 	$.ajax({

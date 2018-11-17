@@ -64,7 +64,7 @@ module.exports = function (app) {
 	app.put('/money_manager_put', function (req, res) {
 		// console.log("in put function")
 		// console.log("body here ", req.body);
-		console.log(req.body)
+		console.log("body",req.body)
 		let idNumber = req.body.idNumber
 		db.Table.update(
 			{ user_balance: req.body.user_balance },
@@ -73,7 +73,7 @@ module.exports = function (app) {
 			}).then(function (dbTable) {
 				res.json(dbTable);
 			});
-		res.send('/money_manager');
+		res.send('/money_manager?id=' + idNumber);
 	});
 
 
