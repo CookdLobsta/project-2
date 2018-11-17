@@ -1,9 +1,3 @@
-
-
-// $(document).ready(function () {
-// $("#myBtn").click(function () {
-// 	$("#myModal").modal();
-// });
 $(function () {
 	$(document).on("click", "#submit", function (event) {
 		event.preventDefault();
