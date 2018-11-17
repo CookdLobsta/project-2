@@ -9,6 +9,18 @@ var urlNum = parseInt(JSON.stringify(urlLocation.search).split("=")[1]);
 console.log(urlNum);
 console.log("url", urlLocation);
 
+$(document).ready(function(){
+	$.get("/api/get_balance/" + urlNum, function(res){
+
+		console.log(res);
+		$("#welcome").text("Welcome " + res.user_name);
+		total = res.user_balance
+		saveTotal = res.user_balance
+		$("#user_total").text(res.user_balance);
+		$
+	})
+})
+
 //onload get user balance, put on page
 $(document).on("click", ".money", function(event) {
   // alert("hit");
