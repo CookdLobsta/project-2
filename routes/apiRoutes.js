@@ -1,5 +1,8 @@
 var db = require('../models');
 
+var total;
+
+
 
 module.exports = function (app) {
 	// Get all examples
@@ -9,32 +12,70 @@ module.exports = function (app) {
 	// 	});
 	// });
 
+	// app.get("/money_manager", function(req, res) {
+	// 	// replace old function with sequelize function
+	// 	db.Table.findAll()
+	// 		// use promise method to pass the burgers...
+	// 		.then(function(dbTable) {
+	// 			// into the main index, updating the page
+	// 			var hbsObject = { user: dbTable };
+	// 			console.log("dbTable",dbTable)
+	// 				return res.render("money_manager", hbsObject);
+	// 		});
+	// });
+
 	// Temp
+	// app.post('/money_manager_post', (req, res) => {
+	// 	db.Table.create(req.body).then(function(dbTable) {
+	// 		res.json(dbTable);
+	// 	})
+	// 	res.send('/money_manager');
+	// })
+
 	app.post('/money_manager_post', (req, res) => {
 		db.Table.create(req.body).then(function(dbTable) {
+			console.log(dbTable.dataValues.id)
+			res.send('/money_manager?id=' + dbTable.dataValues.id); 
+		})
+	})
+
+	// add user_balance
+	app.post('/money_manager_money', (req, res) => {
+		console.log("in post func");
+		db.Table.create(req.body).then(function (dbTable) {
 			res.json(dbTable);
 		})
 		res.send('/money_manager');
-})
-// add user_balance
-app.post('/money_manager_money', (req, res) => {
-	db.Table.create(req.body).then(function(dbTable) {
-		res.json(dbTable);
 	})
-	res.send('/money_manager');
-})
 
-app.put('/money_manager_post', function(req, res) {
-    db.Table.update(
-      {
-        where: {
-		  id: req.body.id,
-		  user_balance: total
-        }
-      }).then(function(dbTable) {
-      res.json(dbTable);
-    });
-  });
+	// app.put('/money_manager_put', function (req, res) {
+	// 	// console.log("in put function")
+	// 	// console.log("body here ", req.body);
+	// 	db.Table.update(
+	// 		{ user_balance: req.body.user_balance },
+	// 		{
+	// 			where: { id: idNumber }
+	// 		}).then(function (dbTable) {
+	// 			res.json(dbTable);
+	// 		});
+	// 	res.send('/money_manager');
+	// });
+
+	app.put('/money_manager_put', function (req, res) {
+		// console.log("in put function")
+		// console.log("body here ", req.body);
+		console.log(req.body)
+		let idNumber = req.body.idNumber
+		db.Table.update(
+			{ user_balance: req.body.user_balance },
+			{
+				where: { id: idNumber }
+			}).then(function (dbTable) {
+				res.json(dbTable);
+			});
+		res.send('/money_manager');
+	});
+
 
 	// End Temp
 
