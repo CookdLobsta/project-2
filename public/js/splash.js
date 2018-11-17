@@ -1,4 +1,4 @@
-
+var idNumber = 0
 
 // $(document).ready(function () {
 // $("#myBtn").click(function () {
@@ -7,10 +7,10 @@
 $(function () {
 	$(document).on("click", "#submit", function (event) {
 		event.preventDefault();
-		console.log("hit");
 		var name = $("#username").val().trim();
 		console.log(name);
-
+		idNumber++;
+		console.log("idNumber ", idNumber);
 		var userName = {
 			user_name: name
 		};
@@ -23,12 +23,10 @@ $(function () {
 		}).then(
 			function (res) {
 				console.log("created new user", res);
-				 window.location = res;
+				window.location = res;
 			}
 		);
 	});
 })
-// });
 
-
-// modules.export = nameData;
+modules.export = nameData;
