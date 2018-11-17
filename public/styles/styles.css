@@ -89,3 +89,8 @@ margin-bottom: 0;
 .money {
 	margin-bottom: 2%;
 }
+
+.resultImage {
+	width: 500px;
+	height: 500px;
+}
