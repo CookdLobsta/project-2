@@ -66,8 +66,9 @@ module.exports = function (app) {
 		// console.log("body here ", req.body);
 		console.log("body",req.body)
 		let idNumber = req.body.idNumber
-		db.Table.update(
-			{ user_balance: req.body.user_balance },
+		db.Table.update({
+			user_balance: req.body.user_balance 
+		},
 			{
 				where: { id: idNumber }
 			}).then(function (dbTable) {

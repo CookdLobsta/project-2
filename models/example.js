@@ -3,7 +3,7 @@ module.exports = function (sequelize, DataTypes) {
 		user_name: DataTypes.STRING,
 		user_balance: DataTypes.INTEGER,
 		goal_name: DataTypes.STRING,
-		goal_upd: DataTypes.INTEGER,
+		goal_upc: DataTypes.INTEGER,
 		goal_price: DataTypes.INTEGER,
 		createdAt: {
 			allowNull: false,

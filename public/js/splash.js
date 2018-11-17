@@ -13,7 +13,9 @@ $(function() {
 
     var userName = {
       user_name: name
-    };
+		};
+		
+		
 
     // Send the POST request.
     $.ajax("/money_manager_post", {
@@ -29,4 +31,3 @@ $(function() {
 // });
 
 // modules.export = nameData;
-

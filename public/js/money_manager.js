@@ -36,40 +36,12 @@ $(document).on("click", ".money", function(event) {
   });
 });
 
-// Send the POST request.
-// $.ajax("/money_manager_post", {
-// 	type: "POST",
-// 	contentType: 'application/json',
-// 	data: JSON.stringify(userName)
-// }).then(
-// 	function (res) {
-// 		console.log("added money", res);
-// 		window.location = res;
-// 	}
-// );
-
 
 // post user_balance to database
 
 $(document).on("click", ".submitTotal", function (event) {
 	event.preventDefault();
 	var userTotal = parseFloat($(".newTotal").text());
-	// console.log("total "+ userTotal);
-	// console.log(typeof(userTotal));
-	// var userMoney = {
-	// 	user_balance: userTotal 
-	// } 
-
-	// $.ajax("/money_manager_money", {
-	// 	type: "POST",
-	// 	contentType: 'application/json',
-	// 	data: JSON.stringify(userMoney)
-	// }).then(
-	// 	function (res) {
-	// 		console.log("added money", res);
-	// 		window.location = res;
-	// 	}
-	// );
 
 	var userMoney = {
 		user_balance: userTotal,
@@ -86,23 +58,11 @@ $(document).on("click", ".submitTotal", function (event) {
 				console.log("added money to john", res);
 				window.location = res;
 			})
-})
+});
 
-//$(document).on("click", ".submitTotal", function(event) {
-//  var userTotal = parseFloat($(".newTotal").text());
-  // console.log("total "+ userTotal);
-  // console.log(typeof(userTotal));
-//  var userMoney = {
-//    user_balance: userTotal
-//  };
+//save item
 
- // $.ajax("/money_manager_money", {
- //   type: "POST",
- //   contentType: "application/json",
- //   data: JSON.stringify(userMoney)
- // }).then(function(res) {
- //   console.log("added money", res);
- //   window.location = res;
- // });
-//});
+$(document).on("click", ".saveItem", function (event) {
+event.preventDefauly();
 
+});
