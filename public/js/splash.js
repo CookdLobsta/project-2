@@ -1,6 +1,6 @@
 $(function() {
   // $(window).on("load", function() {
-    $("#myModal").modal("show");
+  //   $("#myModal").modal("show");
   // });
 
   $(document).on("click", "#submit", function(event) {
