@@ -25,11 +25,18 @@ module.exports = function (app) {
 	// });
 
 	// Temp
+	// app.post('/money_manager_post', (req, res) => {
+	// 	db.Table.create(req.body).then(function(dbTable) {
+	// 		res.json(dbTable);
+	// 	})
+	// 	res.send('/money_manager');
+	// })
+
 	app.post('/money_manager_post', (req, res) => {
 		db.Table.create(req.body).then(function(dbTable) {
-			res.json(dbTable);
+			console.log(dbTable.dataValues.id)
+			res.send('/money_manager?id=' + dbTable.dataValues.id); 
 		})
-		res.send('/money_manager');
 	})
 
 	// add user_balance
@@ -41,9 +48,24 @@ module.exports = function (app) {
 		res.send('/money_manager');
 	})
 
+	// app.put('/money_manager_put', function (req, res) {
+	// 	// console.log("in put function")
+	// 	// console.log("body here ", req.body);
+	// 	db.Table.update(
+	// 		{ user_balance: req.body.user_balance },
+	// 		{
+	// 			where: { id: idNumber }
+	// 		}).then(function (dbTable) {
+	// 			res.json(dbTable);
+	// 		});
+	// 	res.send('/money_manager');
+	// });
+
 	app.put('/money_manager_put', function (req, res) {
 		// console.log("in put function")
 		// console.log("body here ", req.body);
+		console.log(req.body)
+		let idNumber = req.body.idNumber
 		db.Table.update(
 			{ user_balance: req.body.user_balance },
 			{
@@ -53,6 +75,7 @@ module.exports = function (app) {
 			});
 		res.send('/money_manager');
 	});
+
 
 	// End Temp
 
