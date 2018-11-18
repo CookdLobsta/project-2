@@ -1,4 +1,4 @@
-
+ 
 var total = 0;
 var saveTotal = 0;
 var userID = 0;
@@ -69,8 +69,12 @@ $(document).on("click", ".submitTotal", function (event) {
 			function (res) {
 				console.log("added money to john", res);
 				window.location = res;
+			$.ajax({
+				method: "GET",
+				url: "/money_manager_get"
 			})
-});
+		})
+	});
 
 //save item
 
