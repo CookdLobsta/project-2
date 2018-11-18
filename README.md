@@ -1,6 +1,6 @@
 <h1>Banksy an online piggy bank for kids</h1>
 
-<p>We are creating an application to help educate kids on how to manage their funds. They will begin by entering the amount they initially have to start with. This amount will be tracked based on if the users action, whether if they save/add(chores)/purchase an item from the database(wish list). We will be using an API (Amazon/Wal-Mart/Wish-List) to manage our database. This application will also determine the amount the user would have to save/make to purchase the item from the database.</p>
+<p>We are creating an application to help educate kids on how to manage their funds. They will begin by entering the amount they initially have to start with. This amount will be tracked based on if the users action, whether if they save/add money they recieve(chores)/purchase an item from the database(wish list). We will be using an API (Amazon/Wal-Mart/Wish-List) to manage our database. This application will also determine the amount the user would have to save/make to purchase the item from the database.</p>
 
 <h2>Getting Started</h2>
 heroku ????
@@ -19,9 +19,8 @@ heroku ????
 
 <h2>Authors</h2>
 <p>Dennis - Built Splash page worked on main page and splash page styling</p>
-<p>Conner - Connected api and got api elements to display on page</p>
+<p>Connor - Connected api and got api elements to display on page</p>
 <p>Taylor - Built on database and page Javascript related to database</p>
 <p>Cyrus - Worked on styling of main page Made logo, dollar, and coin images</p>
 
 <h2>Page Preview</h2>
-
