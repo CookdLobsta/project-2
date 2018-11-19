@@ -43,16 +43,30 @@ $(document).on("click","#submitToy", function(event){
 							//display on page
 							walmartDiv.append(walPrice);
 							var topPrice = $(".apiItemAmount").text("$ "+ goalPrice);
-							//display at top
-							apiItemAmount.append();
+							
 							
 							//response item upc
 							var goalUpc = itemInfo.upc;
 							//no need to display UPC, console.log it
 							console.log(goalUpc);
+							$(".apiItemAmount").text(goalPrice);
 					});
 
 			};
 			walmartItem();
 	//end on.click
 });
+
+var price = $(".resultPrice").text();
+var balance = $(".user_balance").text();
+var remainder = parseInt(balance)-parseInt(price);
+var percent = remainder/100;
+console.log(typeof(price));
+console.log(typeof(balance));
+console.log(typeof(remainder));
+console.log(remainder);
+console.log(typeof(percent));
+
+var thing = toString(remainder)
+
+	$(".difference").text(thing);
