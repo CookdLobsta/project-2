@@ -42,6 +42,9 @@ $(document).on("click","#submitToy", function(event){
 							var walPrice = $(".resultPrice").text("$ "+ goalPrice);
 							//display on page
 							walmartDiv.append(walPrice);
+							var topPrice = $(".apiItemAmount").text("$ "+ goalPrice);
+							//display at top
+							apiItemAmount.append();
 							
 							//response item upc
 							var goalUpc = itemInfo.upc;
