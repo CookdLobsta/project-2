@@ -47,6 +47,7 @@ $(document).on("click","#submitToy", function(event){
 							var goalUpc = itemInfo.upc;
 							//no need to display UPC, console.log it
 							console.log(goalUpc);
+							$(".apiItemAmount").text(goalPrice);
 					});
 
 			};
