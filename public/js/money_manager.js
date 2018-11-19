@@ -101,6 +101,8 @@ $(document).on("click", ".submitTotal", function (event) {
 			})
 })
 
+
+
 //$(document).on("click", ".submitTotal", function(event) {
 //  var userTotal = parseFloat($(".newTotal").text());
   // console.log("total "+ userTotal);

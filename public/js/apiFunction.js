@@ -42,6 +42,8 @@ $(document).on("click","#submitToy", function(event){
 							var walPrice = $(".resultPrice").text("$ "+ goalPrice);
 							//display on page
 							walmartDiv.append(walPrice);
+							var topPrice = $(".apiItemAmount").text("$ "+ goalPrice);
+							
 							
 							//response item upc
 							var goalUpc = itemInfo.upc;
@@ -54,3 +56,17 @@ $(document).on("click","#submitToy", function(event){
 			walmartItem();
 	//end on.click
 });
+
+var price = $(".resultPrice").text();
+var balance = $(".user_balance").text();
+var remainder = parseInt(balance)-parseInt(price);
+var percent = remainder/100;
+console.log(typeof(price));
+console.log(typeof(balance));
+console.log(typeof(remainder));
+console.log(remainder);
+console.log(typeof(percent));
+
+var thing = toString(remainder)
+
+	$(".difference").text(thing);
