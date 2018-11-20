@@ -22,7 +22,8 @@ $(document).ready(function(){
 		$(".balance").text(res.user_balance)
 		$(".topImage").attr('src', res.goal_img);
 		amountTillGoal = res.goal_price - res.user_balance;
-		$(".amountLeft").text(amountTillGoal)
+		tillGoal = parseFloat(amountTillGoal).toFixed(2)
+		$(".amountLeft").text(tillGoal)
 		progressBarFill = Math.floor((res.user_balance / res.goal_price) * 100);
 		$("#progress_bar").css({width : progressBarFill + "%"})
 		
@@ -33,16 +34,23 @@ $(document).ready(function(){
 $(document).on("click", ".money", function(event) {
   // alert("hit");
   var money = $(this).attr("data-value");
-	// console.log(money);
-	var totalInt = parseFloat(total)
-	
-  total = (totalInt += parseFloat(money));
-  // console.log(total);
-
+  console.log(money);
+  (total += parseFloat(money)).toFixed(2);
+  console.log(total);
   $(".newTotal").html(total.toFixed(2));
-
   var audio = new Audio("../images/chaching.mp3");
   audio.play();
+  var userName = {
+        user_balance: total
+  };
+  $.ajax("/money_manager_post", {
+    type: "PUT",
+    contentType: "application/json",
+    data: JSON.stringify(userName)
+  }).then(function(res) {
+    console.log("added money", res);
+    window.location = res;
+  });
 });
 
 // post user_balance to database
