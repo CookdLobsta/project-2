@@ -34,8 +34,8 @@ $(document).ready(function(){
 $(document).on("click", ".money", function(event) {
   // alert("hit");
   var money = $(this).attr("data-value");
-  console.log(money);
-  (total += parseFloat(money)).toFixed(2);
+  var totalInt = parseFloat(total)
+	total = totalInt += parseFloat(money)
   console.log(total);
   $(".newTotal").html(total.toFixed(2));
   var audio = new Audio("../images/chaching.mp3");
