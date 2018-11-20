@@ -17,7 +17,7 @@ $(document).ready(function(){
 		total = res.user_balance
 		saveTotal = res.user_balance
 		$("#user_total").text(res.user_balance);
-		$(".userBalance").text(res.user_balance);
+		// $(".userBalance").text(res.user_balance);
 		$
 	})
 })
