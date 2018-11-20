@@ -4,23 +4,25 @@
 		<img class="logoImg" src="/images/logo.png" alt="banksy. Your Personal Piggy Bank">
 	</div>
 	<div class="container">
-		<img class="topImage">
 
 		<div class="loadingBar">
 			<div class="row">
 				<div class="col-md-12">
-					<div class = "apiItemAmount">
-					</div>
-					<div class = "userBalance">
-					</div>
-					<h2 class = "difference">
-					</h2>
-					<div class="progress bg-danger progress-bar-striped progress-bar-animated">
-						<div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 25%">
-							<span>
-								$
-								<span class="newTotal">0</span>
-							</span>
+					
+					<div class="card blue-grey darken-1">
+						<div class="card-content white-text">
+							<img class="topImage">
+							<h4 class="amount_left">Just <span class="amountLeft"></span> to go</h4>
+						</div>
+						<div class="card-action">
+							<div class="progress bg-danger progress-bar-striped progress-bar-animated">
+								<div id="progress_bar" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 0%">
+									<span>
+										$
+										<span class="balance">0</span>
+									</span>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -84,10 +86,11 @@
 													
 													<br> <br>
 													<div class="result">
-														<h1 class="resultPrice"></h1>
 														<h5 class="resultName"></h5>
 														<img class="resultImage">
+														<h1 class="resultPrice"></h1>
 													</div>
+														<button type="button" class="saveItem waves-effect waves-light btn">Save Item</button>
 
 													<br>
 												</div>
