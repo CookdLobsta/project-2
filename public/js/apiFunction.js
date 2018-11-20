@@ -8,7 +8,7 @@ $(document).on("click","#submitToy", function(event){
 
 	function walmartItem(search) {
 			var search = $("#searchInput").val().trim();
-			var walmartRequest = "http://api.walmartlabs.com/v1/search?query="+search+"&format=json&apiKey=g5eyb7eyu32n6atjb8k9eq9x";
+			var walmartRequest = "https://api.walmartlabs.com/v1/search?query="+search+"&format=json&apiKey=g5eyb7eyu32n6atjb8k9eq9x";
 
 			$.ajax({
 					url: walmartRequest,
@@ -23,6 +23,7 @@ $(document).on("click","#submitToy", function(event){
 							
 							//response item image
 							var goalImage = itemInfo.mediumImage;
+							console.log(goalImage);
 							//put that image in element
 							var walImage = $(".resultImage").attr('src', goalImage);
 							//display on page

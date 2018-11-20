@@ -76,6 +76,7 @@ module.exports = function (app) {
 
 	app.put("/api/goal", function(req, res){
 		let idNumber = req.body.idNumber
+		console.log('req.body', req.body);
 		db.Table.update(
 			{
 				goal_price: req.body.goal_price,

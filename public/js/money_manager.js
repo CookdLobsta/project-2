@@ -86,6 +86,7 @@ $(document).on("click", ".saveItem", function (event) {
 		goal_img:item_img,
 		idNumber: urlNum
 	};
+	console.log('userGoal', userGoal);
 
 	$.ajax({
 		method: "PUT",
