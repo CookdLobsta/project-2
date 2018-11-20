@@ -74,6 +74,21 @@ module.exports = function (app) {
 	// 	res.send('/money_manager');
 	// });
 
+	app.put("/api/goal", function(req, res){
+		let idNumber = req.body.idNumber
+		db.Table.update(
+			{
+				goal_price: req.body.goal_price,
+				goal_img:req.body.goal_img,
+			},
+			{
+				where: {id: idNumber}
+			}).then(function(dbtable){
+				res.json(dbtable);
+			});
+		res.send('/money_manager?id=' + idNumber);
+	})
+
 	app.put('/money_manager_put', function (req, res) {
 		// console.log("in put function")
 		// console.log("body here ", req.body);

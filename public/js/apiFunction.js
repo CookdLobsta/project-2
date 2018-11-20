@@ -1,3 +1,7 @@
+var itemInfo;
+
+
+
 $(document).on("click","#submitToy", function(event){
 	event.preventDefault();
 	console.log("Retrieving Data...");
@@ -15,19 +19,14 @@ $(document).on("click","#submitToy", function(event){
 							//response location on page
 							var walmartDiv = $(".result");
 							//readable format
-							var itemInfo = response.items[0];
+							itemInfo = response.items[0];
 							
 							//response item image
 							var goalImage = itemInfo.mediumImage;
 							//put that image in element
 							var walImage = $(".resultImage").attr('src', goalImage);
-							//put same image in different element
-							var topImage = $(".topImage").attr('src', goalImage);
 							//display on page
 							walmartDiv.append(walImage);
-							//display at top of page also
-							var topDiv = $(".loadingBar");
-							topDiv.prepend(topImage);
 							
 							//response item name
 							var goalName = itemInfo.name;
